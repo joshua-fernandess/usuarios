@@ -1,3 +1,5 @@
+let usuarios = require('./usuarios.js');
+
 function atualizarUsuario(){
     const index = usuarios.findIndex(usuario => usuario.id === id);
 
@@ -5,7 +7,5 @@ function atualizarUsuario(){
         usuarios[index] = {id, ...novoUsuario};
     }
 }
-
-
 
 module.exports = atualizarUsuario;

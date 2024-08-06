@@ -33,16 +33,16 @@ function mainMenu(){
             break;
         case 3: 
             listarUsuario();
-            index = parseInt(prompt('Digite o número do usuário que deseja remover: ')) - 1;
+            index = parseInt(prompt('Digite o número do usuário que deseja atualizar: ')) - 1;
             const novoNome = prompt('Digite o novo nome do usuário do usuário: ');
-            const novoEmail = prompt('Digite o endereço de e-mail: ');
+            const novoEmail = prompt('Digite o novo endereço de e-mail: ');
             const novoTelefone = prompt('Digite o novo número de telefone: ');
-            atualizarUsuario(id, {nome: novoNome, email: novoEmail, telefone: novoTelefone});
+            atualizarUsuario(index, {nome: novoNome, email: novoEmail, telefone: novoTelefone});
             console.log('Usuário atualizado com sucesso!');
             mainMenu();
             break;
         case 4:
-            index = parseInt(prompt("Digite o número do usuário que deseja remover: "));
+            index = parseInt(prompt("Digite o número do usuário que deseja remover: ")) - 1;
             removerUsuario(index);
             console.log('Usuário removido com sucesso!');
             mainMenu();

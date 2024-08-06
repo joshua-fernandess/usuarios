@@ -1,13 +1,9 @@
 const usuarios = require("./usuarios.js");
 
 function listarUsuario(){
-    const index = usuarios.findIndex(usuario => usuario.id === id);
-
-    if(index !== 1){
-        usuarios[index] = {id, ...novoUsuario};
-    
-    }
-
+    usuarios.forEach((usuario, index) => {
+        console.log(`${index+1} Nome: ${usuario.nome}, E-mail ${usuario.email}, Telefone: ${usuario.telefone}`);
+    });
 }
 
 module.exports = listarUsuario

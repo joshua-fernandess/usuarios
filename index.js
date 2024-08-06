@@ -34,7 +34,7 @@ function mainMenu(){
         case 3: 
             listarUsuario();
             index = parseInt(prompt('Digite o número do usuário que deseja atualizar: ')) - 1;
-            const novoNome = prompt('Digite o novo nome do usuário do usuário: ');
+            const novoNome = prompt('Digite o novo nome do usuário: ');
             const novoEmail = prompt('Digite o novo endereço de e-mail: ');
             const novoTelefone = prompt('Digite o novo número de telefone: ');
             atualizarUsuario(index, {nome: novoNome, email: novoEmail, telefone: novoTelefone});

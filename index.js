@@ -22,8 +22,12 @@ function mainMenu(){
         case 1:
             const nome = prompt('Digite o nome do usuário: ');
             const email = prompt('Digite o e-mail do usuário: ');
-            const telefone = prompt('Digite o número de telefone: ');
-            adicionarUsuario({nome, email, telefone});
+            const telefones = [];
+            let telefone;
+            while ((telefone = prompt('Digite o número de telefone:(ou deixe em branco para sair)'))){
+                telefones.push(telefone);
+            }
+            adicionarUsuario({nome, email, telefones});
             console.log('Usuário adicionado com sucesso!');
             mainMenu();
             break;
@@ -36,8 +40,8 @@ function mainMenu(){
             index = parseInt(prompt('Digite o número do usuário que deseja atualizar: ')) - 1;
             const novoNome = prompt('Digite o novo nome do usuário: ');
             const novoEmail = prompt('Digite o novo endereço de e-mail: ');
-            const novoTelefone = prompt('Digite o novo número de telefone: ');
-            atualizarUsuario(index, {nome: novoNome, email: novoEmail, telefone: novoTelefone});
+            const novoTelefones = prompt('Digite o novo número de telefone: ');
+            atualizarUsuario(index, {nome: novoNome, email: novoEmail, telefones: novoTelefones});
             console.log('Usuário atualizado com sucesso!');
             mainMenu();
             break;
@@ -48,7 +52,7 @@ function mainMenu(){
             mainMenu();
             break;
         case 5:
-            console.log('Saindo do sitema. Até breve!');
+            console.log('Saindo do sistema. Até breve!');
             process.exit();
             break;
         default:

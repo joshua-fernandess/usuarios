@@ -1,9 +1,25 @@
 const usuarios = require("./usuarios.js");
 
 function listarUsuario(){
-    usuarios.forEach((usuario, index) => {
-        console.log(`ID: ${index+1} Nome: ${usuario.nome}, E-mail ${usuario.email}, Telefone: ${usuario.telefone}`);
-    });
+    for(let i = 0; i < usuarios.length; i++){
+        const usuario = usuarios[i];
+        console.log(`
+        ID:  ${usuario.id},
+        Nome: ${usuario.nome},
+        Email: ${usuario.email}
+        `);
+            for (let j = 0; j < usuario.telefones.length; j++){
+                console.log(` ${j+1}. ${usuario.telefones[j]}`);
+            }
+    }
+
+    /* usuarios.forEach((usuario, index) => {
+        console.log(`
+        ID: ${usuario.id} 
+        Nome: ${usuario.nome}, 
+        E-mail ${usuario.email}, 
+        Telefones: ${usuario.telefones}`);
+    }); */
 }
 
-module.exports = listarUsuario
+module.exports = listarUsuario;

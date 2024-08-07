@@ -40,7 +40,11 @@ function mainMenu(){
             index = parseInt(prompt('Digite o número do usuário que deseja atualizar: ')) - 1;
             const novoNome = prompt('Digite o novo nome do usuário: ');
             const novoEmail = prompt('Digite o novo endereço de e-mail: ');
-            const novoTelefones = prompt('Digite o novo número de telefone: ');
+            const novoTelefones = [];
+            let novoTelefone;
+            while ((novoTelefone = prompt('Digite o novo número de telefone: (ou deixe em branco para sair) '))){
+                novoTelefones.push(novoTelefones);
+            }
             atualizarUsuario(index, {nome: novoNome, email: novoEmail, telefones: novoTelefones});
             console.log('Usuário atualizado com sucesso!');
             mainMenu();

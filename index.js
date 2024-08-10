@@ -17,14 +17,14 @@ function mainMenu(){
     ___________________________
     `);
 
-    let opcao = parseInt(prompt('Deseje a opção desejada: '));
+    let opcao = parseInt(prompt('Escolha a opção desejada: '));
     switch(opcao){
         case 1:
             const nome = prompt('Digite o nome do usuário: ');
             const email = prompt('Digite o e-mail do usuário: ');
             const telefones = [];
             let telefone;
-            while ((telefone = prompt('Digite o número de telefone:(ou deixe em branco para sair)'))){
+            while ((telefone = prompt('Digite o telefone:(ou deixe em branco para sair)'))){
                 telefones.push(telefone);
             }
             adicionarUsuario({nome, email, telefones});
@@ -37,21 +37,21 @@ function mainMenu(){
             break;
         case 3: 
             listarUsuario();
-            index = parseInt(prompt('Digite o número do usuário que deseja atualizar: ')) - 1;
+            const id = parseInt(prompt('Digite o usuário que deseja atualizar: '));
             const novoNome = prompt('Digite o novo nome do usuário: ');
             const novoEmail = prompt('Digite o novo endereço de e-mail: ');
             const novoTelefones = [];
             let novoTelefone;
-            while ((novoTelefone = prompt('Digite o novo número de telefone: (ou deixe em branco para sair) '))){
-                novoTelefones.push(novoTelefones);
+            while ((novoTelefone = prompt('Digite o novo telefone: (ou deixe em branco para sair) '))){
+                novoTelefones.push(novoTelefone);
             }
-            atualizarUsuario(index, {nome: novoNome, email: novoEmail, telefones: novoTelefones});
+            atualizarUsuario(id, {nome: novoNome, email: novoEmail, telefones: novoTelefones});
             console.log('Usuário atualizado com sucesso!');
             mainMenu();
             break;
         case 4:
-            index = parseInt(prompt("Digite o número do usuário que deseja remover: ")) - 1;
-            removerUsuario(index);
+            const indexRemover = parseInt(prompt("Digite o número do usuário que deseja remover: ")) - 1;
+            removerUsuario(indexRemover);
             console.log('Usuário removido com sucesso!');
             mainMenu();
             break;

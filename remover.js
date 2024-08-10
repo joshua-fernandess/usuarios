@@ -1,7 +1,7 @@
 let usuarios = require('./usuarios.js');
 
-function removerUsuario(index){
-    usuarios.splice(index, 1);
+function removerUsuario(indexRemover){
+    usuarios.splice(indexRemover, 1);
 }
 
 module.exports = removerUsuario;

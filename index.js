@@ -50,10 +50,11 @@ function mainMenu(){
             mainMenu();
             break;
         case 4:
-            const indexRemover = parseInt(prompt("Digite o número do usuário que deseja remover: ")) - 1;
-            removerUsuario(indexRemover);
-            console.log('Usuário removido com sucesso!');
-            mainMenu();
+            listarUsuario()
+            id = parseInt(prompt('Número do usuário a deletar: ')) 
+            let confirmacao = prompt("Tem certeza que deseja remover? (sim/nao): ")
+            removerUsuario(id, confirmacao);
+            exibirMenu();
             break;
         case 5:
             console.log('Saindo do sistema. Até breve!');
